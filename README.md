@@ -1,11 +1,12 @@
-# `history_import`
+# `history_importer`
 
 This is a collection of scripts that automatically back up your personal data into a git repository. The goal is to have a managed dataset of unmodified source data that can be processed and manipulated as desired.
 
 Currently the scripts are naïve about file sizes: they don’t attempt to use [`git-lfs`](https://git-lfs.github.com) (Large File Storage), which GitHub [requires for files over 100 megabytes](https://help.github.com/articles/working-with-large-files/) in size. If the scripts import files over 50 megabytes in size, you should configure `git-lfs` for your `history` repository.
 
-## Supported data types
+## Supported data sources
 
+* [batlog](https://github.com/jradavenport/batlog): data is copied from `~/batlog.dat`
 * [Messages](https://support.apple.com/explore/messages): data is copied from `~/Library/Messages`
 * [Photos](https://www.apple.com/macos/photos/): metadata is extracted via AppleScript
 * [Safari](https://www.apple.com/safari/): data is copied from `~/Library/Safari/history.db`
@@ -29,11 +30,11 @@ You can safely run this importer on multiple machines. Because different machine
 
 You’ll need to be in a terminal window to run the importer.
 
-Make sure you are in the directory on your machine where this repository was cloned: `pwd` should return `history_import`. Run `HISTORY_DATA_PATH=../history ./import.sh`.
+Make sure you are in the directory on your machine where this repository was cloned: `pwd` should return `history_importer`. Run `HISTORY_DATA_PATH=../history ./import.sh`.
 
 ### Using `crontab` to run the importer automatically
 
-Make sure you are in the directory on your machine where this repository was cloned: `pwd` should return `history_import`.
+Make sure you are in the directory on your machine where this repository was cloned: `pwd` should return `history_importer`.
 
 To automatically run the importer every hour:
 
