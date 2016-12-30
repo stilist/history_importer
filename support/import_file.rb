@@ -13,7 +13,10 @@ def import_file(path, data_source)
   raise 'Need a source type (e.g. "safari")' if !data_source
 
   full_path = File.expand_path(path)
-  raise 'Not a file' if !File.file?(full_path)
+  if !File.file?(full_path)
+    puts "Not a file: #{path}"
+    return
+  end
 
   # @note +HISTORY_DATA_PATH+ is something like +~/Documents/history+.
   destination = "#{ENV.fetch("HISTORY_DATA_PATH")}/data/#{data_source}"
