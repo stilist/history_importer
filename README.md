@@ -39,7 +39,7 @@ To automatically run the importer every hour:
 
 ```shell
 cron_path="$(env - /bin/sh -c 'echo $PATH'):/usr/sbin"
-croncmd="pushd $(pwd) ; PATH=$cron_path HISTORY_DATA_PATH=../history $(pwd)/import.sh"
+croncmd="pushd $(pwd) ; PATH=$cron_path HISTORY_DATA_PATH=$(cd ../history ; pwd) $(pwd)/import.sh"
 cronjob="0 * * * * $croncmd"
 ( crontab -l 2>/dev/null | grep -v -F "$croncmd" ; echo "$cronjob" ) | crontab -
 ```
@@ -48,6 +48,6 @@ To stop automatically running the importer:
 
 ```shell
 cron_path="$(env - /bin/sh -c 'echo $PATH'):/usr/sbin"
-croncmd="pushd $(pwd) ; PATH=$cron_path HISTORY_DATA_PATH=../history $(pwd)/import.sh"
+croncmd="pushd $(pwd) ; PATH=$cron_path HISTORY_DATA_PATH=$(cd ../history ; pwd) $(pwd)/import.sh"
 ( crontab -l | grep -v -F "$croncmd" ) | crontab -
 ```
