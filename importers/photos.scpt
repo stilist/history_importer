@@ -3,8 +3,7 @@ function writeToFile(data) {
   app.includeStandardAdditions = true
   app.strictPropertyScope = true
 
-  const dataRoot = app.pathTo('home folder').
-    toString()
+  const dataRoot = Path(app.systemAttribute('HISTORY_DATA_PATH')).toString()
   const fullPath = `${dataRoot}/history/data/photos/metadata.json`
   const filePath = Path(fullPath).toString()
 
