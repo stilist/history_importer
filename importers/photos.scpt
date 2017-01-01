@@ -16,10 +16,11 @@ function writeToFile(data) {
     app.closeAccess(file)
 
     return true
-  } catch(error) {
+  } catch(errorWriteData) {
+    console.log(`Couldn't write data: ${error}`)
     try {
       app.closeAccess(fullPath)
-    } catch(error) {
+    } catch(errorCloseFile) {
       console.log(`Couldn't close file: ${error}`)
     }
 
