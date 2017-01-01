@@ -8,7 +8,7 @@ require_relative 'hardware_model'
 # @param path [String] path to locate the source file
 # @param data_source [String] the app (or other source) the data is from -- for
 #   example, +'safari'+
-def import_file(path, data_source)
+def import_file(path, data_source, destination_filename: nil)
   raise 'Source not passed' if !path
   raise 'Need a source type (e.g. "safari")' if !data_source
 
@@ -22,8 +22,10 @@ def import_file(path, data_source)
   destination = "#{ENV.fetch("HISTORY_DATA_PATH")}/data/#{data_source}"
   FileUtils.mkdir_p(destination)
 
-  extension = File.extname(full_path)
-  FileUtils.cp(full_path, "#{destination}/#{hardware_model}#{extension}",
+  filename = if destination_filename then destination_filename
+             else "#{hardware_model}#{File.extname(full_path)}"
+             end
+  FileUtils.cp(full_path, "#{destination}/#{filename}",
                preserve: true,
                verbose: true)
 end
