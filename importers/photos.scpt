@@ -17,11 +17,11 @@ function writeToFile(data) {
 
     return true
   } catch(errorWriteData) {
-    console.log(`Couldn't write data: ${error}`)
+    console.log(`Couldn't write data: ${errorWriteData}`)
     try {
       app.closeAccess(fullPath)
     } catch(errorCloseFile) {
-      console.log(`Couldn't close file: ${error}`)
+      console.log(`Couldn't close file: ${errorCloseFile}`)
     }
 
     return false
