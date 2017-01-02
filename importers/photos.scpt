@@ -4,7 +4,7 @@ function writeToFile(data) {
   app.strictPropertyScope = true
 
   const dataRoot = Path(app.systemAttribute('HISTORY_DATA_PATH')).toString()
-  const fullPath = `${dataRoot}/history/data/photos/metadata.json`
+  const fullPath = `${dataRoot}/data/photos/metadata.json`
   const filePath = Path(fullPath).toString()
 
   try {
