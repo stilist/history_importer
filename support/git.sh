@@ -31,5 +31,6 @@ if [ "$?" -eq "0" ] ; then
   # This can clean up quite a bit of disk space.
   git lfs prune --verbose --verify-remote
 fi
+git gc
 
 popd
