@@ -24,4 +24,12 @@ git fetch origin master
 git pull --rebase origin master
 git push origin master
 
+# Check if git-lfs is installed.
+git config --global --list | grep lfs
+if [ "$?" -eq "0" ] ; then
+  # Tidy up local git-lfs refs that have been synced with the remote server.
+  # This can clean up quite a bit of disk space.
+  git lfs prune --verbose --verify-remote
+fi
+
 popd
