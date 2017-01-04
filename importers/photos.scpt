@@ -55,4 +55,6 @@ function getData() {
   return locations
 }
 
-writeToFile(getData())
+if (Application('Photos').running()) {
+  writeToFile(getData())
+}
