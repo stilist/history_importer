@@ -7,8 +7,10 @@ Currently the scripts are naïve about file sizes: they don’t attempt to use [
 ## Supported data sources
 
 * [batlog](https://github.com/jradavenport/batlog): data is copied from `~/batlog.dat`
+* FaceTime: data is copied from `~/Library/Application Support/CallHistoryDB/CallHistory.storedata`
+* [iOS](https://www.theiphonewiki.com/wiki/ITunes_Backup): data is copied from `~/Library/Application Support/MobileSync/Backup`
 * [Messages](https://support.apple.com/explore/messages): data is copied from `~/Library/Messages`
-* [Photos](https://www.apple.com/macos/photos/): metadata is extracted via AppleScript
+* [Photos](https://www.apple.com/macos/photos/): metadata is extracted via JavaScript for Automation (JXA)
 * [Safari](https://www.apple.com/safari/): data is copied from `~/Library/Safari/history.db`
 * [Time Sink](http://manytricks.com/timesink/): data is copied from `~/Library/Time Sink/Configurations/Default.plist`
 * [WhatPulse](https://whatpulse.org): data is copied from `~/Library/Application Support/whatpulse/whatpulse.db`

@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Import FaceTime data from macOS
 - Import call, Messages, Notes, and voicemail data from iOS
 - Import `.ichat` macOS Messages archives (created if ‘Save history when conversations are closed’ is enabled in Messages preferences)
+- Document FaceTime and iOS support in `README`
 
 ### Changed
 - Adjust `import_file` script to support custom filenames for imported files
