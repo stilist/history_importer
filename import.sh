@@ -15,5 +15,3 @@ for file in ./*.sh ; do
 done
 unset file
 popd
-
-. ./support/git.sh

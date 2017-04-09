@@ -1,8 +1,6 @@
 # `history_importer`
 
-This is a collection of scripts that automatically back up your personal data into a git repository. The goal is to have a managed dataset of unmodified source data that can be processed and manipulated as desired.
-
-Currently the scripts are naïve about file sizes: they don’t attempt to use [`git-lfs`](https://git-lfs.github.com) (Large File Storage), which GitHub [requires for files over 100 megabytes](https://help.github.com/articles/working-with-large-files/) in size. If the scripts import files over 50 megabytes in size, you should configure `git-lfs` for your `history` repository.
+This is a collection of scripts that automatically back up your personal data. The goal is to have a managed dataset of unmodified source data that can be processed and manipulated as desired.
 
 ## Supported data sources
 
@@ -20,11 +18,7 @@ Currently the scripts are naïve about file sizes: they don’t attempt to use [
 The importer script will:
 
 1. create the `history` directory if it doesn’t already exist,
-2. import available data,
-3. make sure `history` is a git repo,
-4. make a commit with the data,
-5. attempt to create a private `history` repository on your GitHub account if one doesn’t already exist, and
-6. attempt to push the data to your GitHub account
+2. import available data
 
 You can safely run this importer on multiple machines. Because different machines may have different data sets, most importers will give files a name based on the machine where the script is running.
 
