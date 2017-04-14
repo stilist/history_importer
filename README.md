@@ -8,6 +8,7 @@ This is a collection of scripts that automatically back up your personal data. T
 * FaceTime: data is copied from `~/Library/Application Support/CallHistoryDB/CallHistory.storedata`
 * [iOS](https://www.theiphonewiki.com/wiki/ITunes_Backup): data is copied from `~/Library/Application Support/MobileSync/Backup`
 * [IRB history](http://ruby-doc.org/stdlib-2.4.0/libdoc/irb/rdoc/IRB.html#module-IRB-label-History): data is copied from [`~/.irb_history`](https://github.com/stilist/dotfiles/blob/master/ruby/.irbrc)
+* [`less` history](https://linux.die.net/man/1/less): data is copied from `$LESSHISTFILE` (defaults to `~/.lesshst`)
 * [Messages](https://support.apple.com/explore/messages): data is copied from `~/Library/Messages`
 * [Photos](https://www.apple.com/macos/photos/): metadata is extracted via JavaScript for Automation (JXA)
 * [Safari](https://www.apple.com/safari/): data is copied from `~/Library/Safari/history.db`
