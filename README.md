@@ -6,6 +6,7 @@ This is a collection of scripts that automatically back up your personal data. T
 
 * [batlog](https://github.com/jradavenport/batlog): data is copied from `~/batlog.dat`
 * FaceTime: data is copied from `~/Library/Application Support/CallHistoryDB/CallHistory.storedata`
+* [Flight tracks](http://flightxml.flightaware.com/soap/FlightXML2/doc#op_GetHistoricalTrack): uses the [FlightAware](http://flightaware.com) API -- you can find `faFlightID`s by viewing a flight's track log; for example, [American Airlines 1384](http://flightaware.com/live/flight/AAL1384) flew [SEA to PHX](http://flightaware.com/live/flight/AAL1384/history/20170501/0059Z/KSEA/KPHX/tracklog) with an id of `AAL1384-1493357164-airline-0177`
 * [iOS](https://www.theiphonewiki.com/wiki/ITunes_Backup): data is copied from `~/Library/Application Support/MobileSync/Backup`
 * [IRB history](http://ruby-doc.org/stdlib-2.4.0/libdoc/irb/rdoc/IRB.html#module-IRB-label-History): data is copied from [`~/.irb_history`](https://github.com/stilist/dotfiles/blob/master/ruby/.irbrc)
 * [`less` history](https://linux.die.net/man/1/less): data is copied from `$LESSHISTFILE` (defaults to `~/.lesshst`)
