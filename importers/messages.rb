@@ -11,6 +11,8 @@ source = File.expand_path('~/Library/Messages')
 destination = File.expand_path("#{ENV.fetch("HISTORY_DATA_PATH")}/data/messages/")
 directories = %w(Archive Attachments)
 directories.each do |directory|
+  next if !File.exist?("#{source}/#{directory}")
+
   FileUtils.mkdir_p("#{destination}/#{directory.downcase}")
   FileUtils.cp_r("#{source}/#{directory}/.", "#{destination}/#{directory.downcase}",
                  preserve: true,
