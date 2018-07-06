@@ -3,7 +3,12 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-gem install bundler --no-document --user-install --conservative --minimal-deps --verbose
+set +e
+gem list bundler --installed --silent
+if [ "$?" -eq "1" ] ; then
+  gem install bundler --conservative --minimal-deps --no-document --user-install --verbose
+fi
+set -e
 
 # `ruby --version` outputs something like:
 #
