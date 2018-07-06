@@ -20,7 +20,7 @@ set -e
 #
 # This is part of the path rubygems uses when gems are installed with
 # `gem install --user-install`.
-ruby_version="$(ruby -v | sed -E 's/^.+(([0-9]+\.?){3})p.+$/\1/')"
+ruby_version="$(ruby -v | cat <(sed -E 's/^.+(([0-9]+\.?){2})\.[0-9]+p.+$/\1/')).0"
 bundler_path="$HOME/.gem/ruby/$ruby_version/bin"
 
 "$bundler_path/bundle" check || "$bundler_path/bundle" install --jobs 4 --path vendor/bundle
