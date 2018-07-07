@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
+- Import macOS `.bash_sessions` files
 - Import flight tracks
 - Import IRB history data
 - Import `less` history data
