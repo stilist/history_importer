@@ -1,11 +1,12 @@
 # frozen_string_literal: true
-#!/usr/bin/env ruby
 
 require 'FlightXML2RESTDriver'
 require 'json'
-require_relative '../support/import_file'
 
-return if !ENV['FLIGHTAWARE_KEY'] || !ENV['FLIGHTAWARE_USER']
+if !ENV['FLIGHTAWARE_KEY'] || !ENV['FLIGHTAWARE_USER']
+  puts "Can't authenticate FlightAware request."
+  exit
+end
 
 def client
   @client ||= begin
