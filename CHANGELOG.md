@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Import macOS `.bash_sessions` files
 - Import flight tracks
+- Import last.fm play history
 - Import IRB history data
 - Import `less` history data
 
