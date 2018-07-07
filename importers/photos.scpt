@@ -42,13 +42,21 @@ function getData() {
     Progress.completedUnitCount = index + 1
 
     let [latitude, longitude] = item.location()
-  	if (!latitude) return null
+    if (!latitude) return null
+
+    const startTime = new Date(item.date()).toISOString()
 
     return {
       altitude: item.altitude(),
+      id: item.id(),
       lat: latitude,
       lng: longitude,
-      timestamp: item.date(),
+      name: item.name(),
+      note: item.description(),
+      startTime: startTime,
+      // @note Ideally if `item` is a video this would be `startTime` + video
+      //   duration, but the duration isn't exposed.
+      endTime: startTime,
     }
   }).filter((item) => item)
 
