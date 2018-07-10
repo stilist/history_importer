@@ -12,7 +12,7 @@ def hardware_model
     serial = `system_profiler SPHardwareDataType`.lines
       .find { |line| line =~ /Serial/ }
       .strip[-4..-1]
-    uri = URI.parse("http://support-sp.apple.com/sp/product?cc=#{serial}")
+    uri = URI.parse("https://support-sp.apple.com/sp/product?cc=#{serial}")
     xml = uri.read.
       match(/<configCode>(.*?)<\/configCode>/)[1]
   rescue
