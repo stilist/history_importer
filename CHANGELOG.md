@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Import IRB history data
 - Import `less` history data
 - Parse [Gyroscope Places](https://gyrosco.pe/places/) data
+- Add `activesupport` gem to `Gemfile`
 
 ### Changed
 - Disable git integration until [git-lfs supports removing old objects](https://github.com/git-lfs/git-lfs/issues/1101)
