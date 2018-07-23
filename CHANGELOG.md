@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Import last.fm play history
 - Import IRB history data
 - Import `less` history data
+- Parse [Gyroscope Places](https://gyrosco.pe/places/) data
 
 ### Changed
 - Disable git integration until [git-lfs supports removing old objects](https://github.com/git-lfs/git-lfs/issues/1101)
