@@ -6,6 +6,8 @@ require 'nokogiri'
 data_path = File.expand_path(File.join(ENV['HISTORY_DATA_PATH'], 'data', 'gyroscope_places'))
 input_files = Dir[File.join(data_path, '*.html')]
 
+exit(0) if input_files.empty?
+
 # This parses the HTML that renders Gyroscope's 'Places' data, e.g.
 # https://gyrosco.pe/stilist/helix/places/2018/7/. This can be either the full
 # document or just the partial data the server sends when navigating between

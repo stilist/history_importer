@@ -30,7 +30,10 @@ def import_file(path, data_source, destination_filename: nil)
   filename = if destination_filename then destination_filename
              else "#{hardware_model}#{File.extname(full_path)}"
              end
+  puts "    Copying #{full_path} to #{destination}/#{filename}"
   FileUtils.cp(full_path, "#{destination}/#{filename}",
                preserve: true,
                verbose: true)
+rescue ::Errno::EPERM
+  puts '--> Unable to copy file due to permissions issue.'
 end

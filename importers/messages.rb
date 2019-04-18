@@ -13,8 +13,12 @@ directories = %w(Archive Attachments)
 directories.each do |directory|
   next if !File.exist?("#{source}/#{directory}")
 
-  FileUtils.mkdir_p("#{destination}/#{directory.downcase}")
-  FileUtils.cp_r("#{source}/#{directory}/.", "#{destination}/#{directory.downcase}",
-                 preserve: true,
-                 verbose: true)
+  begin
+    FileUtils.mkdir_p("#{destination}/#{directory.downcase}")
+    FileUtils.cp_r("#{source}/#{directory}/.", "#{destination}/#{directory.downcase}",
+                   preserve: true,
+                   verbose: true)
+  rescue ::Errno::EPERM
+    puts "--> Unable to create #{destination}/#{directory.downcase} due to permissions issue."
+  end
 end

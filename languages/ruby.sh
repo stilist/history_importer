@@ -26,6 +26,6 @@ bundler_path="$HOME/.gem/ruby/$ruby_version/bin"
 "$bundler_path/bundle" check || "$bundler_path/bundle" install --jobs 4 --path vendor/bundle
 
 for file in ../importers/*.rb ; do
-  [ -r "$file" ] && [ -f "$file" ] && "$bundler_path/bundle" exec ruby "$file"
+  [ -r "$file" ] && [ -f "$file" ] && "$bundler_path/bundle" exec ruby "$file" --trace
 done
 unset file;

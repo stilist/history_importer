@@ -16,7 +16,12 @@ known_filenames = {
 end
 
 backup_root = File.expand_path('~/Library/Application Support/MobileSync/Backup')
-backups = Dir["#{backup_root}/*"]
+begin
+  backups = Dir["#{backup_root}/*"]
+rescue ::Errno::EPERM
+  puts "--> Unable to access #{backup_root} due to permissions issue."
+  exit(0)
+end
 backups.each do |backup_path|
   document = Plist.parse_xml(File.join(backup_path, 'Info.plist'))
   next if document.nil?

@@ -11,17 +11,18 @@ class NetworkError < StandardError ; end
 class Lastfm
   attr_reader :data
 
-  DEFAULT_PARAMS = {
-    api_key: ENV.fetch('LASTFM_API_KEY'),
-    format: 'json',
-    limit: 200,
-    method: 'user.getrecenttracks',
-    user: ENV.fetch('LASTFM_USER'),
-  }.freeze
   SECONDS_BETWEEN_REQUESTS = 0.2
 
   def initialize
     @uri = URI.parse("https://ws.audioscrobbler.com/2.0/")
+
+    @default_params = {
+      api_key: ENV.fetch('LASTFM_API_KEY'),
+      format: 'json',
+      limit: 200,
+      method: 'user.getrecenttracks',
+      user: ENV.fetch('LASTFM_USER'),
+    }.freeze
 
     output_directory = "#{ENV.fetch("HISTORY_DATA_PATH")}/data/lastfm"
     @output_path = File.expand_path("#{output_directory}/#{ENV.fetch('LASTFM_USER')}.json")
@@ -60,7 +61,7 @@ class Lastfm
 
   def fetch(params = {})
     uri = @uri.dup
-    uri.query = DEFAULT_PARAMS.merge(params)
+    uri.query = @default_params.merge(params)
       .map { |k, v| "#{k}=#{v}" }
       .join('&')
     response = open(uri, read_timeout: 5) do |res|
