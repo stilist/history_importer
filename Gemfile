@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'activesupport', '~> 5.2.0'
 gem 'dotenv', '~> 2.2.0'
 gem 'FlightXML2RESTDriver', '~> 0.1.0'
-gem 'nokogiri', '~> 1.8.2'
+gem 'nokogiri', '~> 1.10.4'
 gem 'plist', '~> 3.2.0'
 # @note Implicit dependency for +FlightXML2RESTDriver+.
 gem 'rest-client', '~> 2.0.0'
