@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'activesupport', '~> 6.0.6'
+gem 'activesupport', '~> 6.1.7'
 gem 'dotenv', '~> 2.2.0'
 gem 'FlightXML2RESTDriver', '~> 0.1.0'
 gem 'nokogiri', '~> 1.13.6'
